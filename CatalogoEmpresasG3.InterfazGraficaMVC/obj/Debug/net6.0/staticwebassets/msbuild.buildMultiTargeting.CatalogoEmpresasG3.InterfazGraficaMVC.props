@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CatalogoEmpresasG3.InterfazGraficaMVC.props" />
+</Project>

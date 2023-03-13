@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "CatalogoEmpresasG3.EntidadesDeNegocio/1.0.0": {
+        "runtime": {
+          "CatalogoEmpresasG3.EntidadesDeNegocio.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CatalogoEmpresasG3.EntidadesDeNegocio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

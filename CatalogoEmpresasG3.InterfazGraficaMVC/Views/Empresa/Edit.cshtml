@@ -1,0 +1,73 @@
+﻿@model CatalogoEmpresasG3.EntidadesDeNegocio.Empresa
+
+@{
+    ViewData["Title"] = "Modificar";
+    List<CatalogoEmpresasG3.EntidadesDeNegocio.Contacto> contactos = ViewBag.Contactos as List<CatalogoEmpresasG3.EntidadesDeNegocio.Contacto>;
+}
+
+<h1>Modificar la empresa</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="ID"/>
+
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rubro" class="control-label"></label>
+                <input asp-for="Rubro" class="form-control" />
+                <span asp-validation-for="Rubro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label>
+                <input asp-for="Categoria" class="form-control" />
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Departamento" class="control-label"></label>
+                <input asp-for="Departamento" class="form-control" />
+                <span asp-validation-for="Departamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactoID" class="control-label"></label>
+
+                <select asp-for="ContactoID" class="form-control">
+                    @foreach (var item in contactos)
+                    {
+                        if (Model.ContactoID == item.ID)
+                        {
+                            <option selected value="@item.ID">@item.Nombre</option>
+                        }
+                        else
+                        {
+                            <option value="@item.ID">@item.Nombre></option>
+                        }
+                    }
+                </select>
+
+                <span asp-validation-for="ContactoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar cambios" class="btn btn-primary" />
+            </div>
+
+            <span class="text-danger">@ViewBag.Error</span>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
